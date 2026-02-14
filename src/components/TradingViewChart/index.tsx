@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from 'react'
+import { useEffect, useRef, useCallback, useMemo } from 'react'
 import BinanceAPI from '../../services/api'
 import type { ChartProperties, TradingViewWidget } from '../../types/tradingview'
 import './index.scss'
@@ -14,6 +14,10 @@ export default function TradingViewChart({
   onWidgetReady,
   onSymbolChange
 }: TradingViewChartProps) {
+  const containerId = useMemo(() => {
+    return `chart_container_${Math.random().toString(36).substring(2, 9)}`
+  }, [])
+
   const containerRef = useRef<HTMLDivElement>(null)
   const widgetRef = useRef<TradingViewWidget | null>(null)
   const apiRef = useRef<BinanceAPI | null>(null)
@@ -33,7 +37,7 @@ export default function TradingViewChart({
 
     try {
       widgetRef.current = new TradingViewLib.widget({
-        container_id: 'chart_container',
+        container_id: containerId,
         datafeed: apiRef.current,
         library_path: '/scripts/charting_library/',
         disabled_features: ['timeframes_toolbar', 'header_undo_redo'],
@@ -73,5 +77,5 @@ export default function TradingViewChart({
     return cleanup
   }, [chartProperties, onWidgetReady, onSymbolChange])
 
-  return <div id="chart_container" ref={containerRef}></div>
+  return <div id={containerId} ref={containerRef}></div>
 }
