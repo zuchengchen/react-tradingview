@@ -1,0 +1,37 @@
+.timeframe-selector {
+  padding: 4px 8px;
+  font-size: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  min-width: 60px;
+  
+  &:hover {
+    border-color: #c0c0c0;
+  }
+  
+  &:focus {
+    border-color: #2962ff;
+    box-shadow: 0 0 0 2px rgba(41, 98, 255, 0.1);
+  }
+}
+
+// Dark theme support
+:global(.dark) .timeframe-selector,
+[data-theme="dark"] .timeframe-selector {
+  background: #1e222d;
+  border-color: #363a45;
+  color: #d1d4dc;
+  
+  &:hover {
+    border-color: #4a4e59;
+  }
+  
+  &:focus {
+    border-color: #2962ff;
+    box-shadow: 0 0 0 2px rgba(41, 98, 255, 0.2);
+  }
+}

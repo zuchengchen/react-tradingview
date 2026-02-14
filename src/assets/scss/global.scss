@@ -1,16 +1,29 @@
-@import './variables.scss';
-body {
+@use './variables.scss' as vars;
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-  background: $bg-gray1;
-  color: $textColor;
-  font-family: monospace;
+  background: vars.$bg-gray1;
+  color: vars.$textColor;
 }
+
 h1,h2,h3,h4,h5,h6,p,span,i {
   font-weight: normal;
 }

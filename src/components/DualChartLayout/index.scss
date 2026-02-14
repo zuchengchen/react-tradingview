@@ -1,0 +1,45 @@
+.dual-chart-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  gap: 8px;
+  padding: 8px;
+  box-sizing: border-box;
+  
+  &.dark {
+    background: #131722;
+  }
+  
+  &.light {
+    background: #f8f9fa;
+  }
+  
+  .chart-wrapper {
+    flex: 1;
+    min-height: 0;
+    
+    &.upper {
+      flex: 1.2;
+    }
+    
+    &.lower {
+      flex: 1;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-height: 600px) {
+  .dual-chart-layout {
+    gap: 4px;
+    padding: 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dual-chart-layout {
+    gap: 6px;
+    padding: 6px;
+  }
+}

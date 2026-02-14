@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradingView Test</title>
+    <script src="/scripts/charting_library/charting_library.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; overflow: hidden; }
+        #chart_container { width: 100%; height: 100%; }
+    </style>
+</head>
+<body>
+    <div id="chart_container"></div>
+    <script>
+        setTimeout(() => {
+            if (window.TradingView) {
+                console.log('Creating widget...');
+                const widget = window.TradingView.widget({
+                    container: "chart_container",
+                    library_path: "/scripts/charting_library/",
+                    symbol: "BTCUSDT",
+                    interval: "60",
+                    autosize: true
+                });
+                console.log('Widget created:', widget);
+            } else {
+                console.error('TradingView not loaded');
+            }
+        }, 500);
+    </script>
+</body>
+</html>
