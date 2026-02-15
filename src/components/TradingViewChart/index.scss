@@ -1,4 +1,5 @@
-#chart_container {
+// Target the chart container div (uses dynamic IDs like chart_container_abc123)
+.chart-body > div[id^="chart_container"] {
   padding: 0;
   margin: 0;
   width: 100%;
@@ -8,4 +9,16 @@
   left: 0;
   right: 0;
   bottom: 0;
+  
+  // Override any TradingView internal margins
+  iframe {
+    display: block;
+    margin: 0 !important;
+  }
+}
+
+// Also target by ID pattern for specificity
+div[id^="chart_container"] {
+  padding: 0;
+  margin: 0;
 }
