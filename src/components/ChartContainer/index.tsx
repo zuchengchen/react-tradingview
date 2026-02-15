@@ -13,6 +13,7 @@ interface ChartContainerProps {
   position: 'upper' | 'lower'
   locale: string
   timezone: string
+  enableCrosshairSync?: boolean
 }
 
 export default function ChartContainer({
@@ -24,6 +25,7 @@ export default function ChartContainer({
   position,
   locale,
   timezone,
+  enableCrosshairSync,
 }: ChartContainerProps) {
   const widgetRef = useRef<TradingViewWidget | null>(null)
 

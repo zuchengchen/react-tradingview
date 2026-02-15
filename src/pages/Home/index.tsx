@@ -9,6 +9,7 @@ export default function Home() {
         upperTimeframe="60"
         lowerTimeframe="15"
         theme="light"
+        enableCrosshairSync={true}  // 启用 crosshair 同步
       />
     </div>
   )

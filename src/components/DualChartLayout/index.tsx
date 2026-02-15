@@ -1,5 +1,6 @@
 import { useState, useCallback, useMemo } from 'react'
 import ChartContainer from '../ChartContainer'
+import TradingViewChart from '../TradingViewChart'
 import './index.scss'
 
 interface DualChartLayoutProps {
@@ -7,6 +8,7 @@ interface DualChartLayoutProps {
   upperTimeframe?: string
   lowerTimeframe?: string
   theme?: 'light' | 'dark'
+  enableCrosshairSync?: boolean
 }
 
 function getLocalLanguage(): string {
@@ -18,6 +20,7 @@ export default function DualChartLayout({
   upperTimeframe: initialUpperTf = '60',
   lowerTimeframe: initialLowerTf = '15',
   theme = 'light',
+  enableCrosshairSync,
 }: DualChartLayoutProps) {
   const [symbol, setSymbol] = useState<string>(defaultSymbol)
   const [upperTimeframe, setUpperTimeframe] = useState<string>(initialUpperTf)
@@ -47,6 +50,7 @@ export default function DualChartLayout({
           position="upper"
           locale={locale}
           timezone={timezone}
+          enableCrosshairSync={enableCrosshairSync}
         />
       </div>
       <div className="chart-wrapper lower">
@@ -59,6 +63,7 @@ export default function DualChartLayout({
           position="lower"
           locale={locale}
           timezone={timezone}
+          enableCrosshairSync={enableCrosshairSync}
         />
       </div>
     </div>
