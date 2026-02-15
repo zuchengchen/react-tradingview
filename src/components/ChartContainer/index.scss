@@ -4,21 +4,20 @@
   height: 100%;
   min-height: 0;
   background: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
+  border: none;
   overflow: hidden;
-  
+
   .chart-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 12px;
-    background: #f8f9fa;
+    padding: 4px 8px;
+    background: #f5f5f5;
     border-bottom: 1px solid #e0e0e0;
     flex-shrink: 0;
-    
+
     .chart-label {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 500;
       color: #666;
       text-transform: uppercase;
@@ -37,12 +36,11 @@
 :global(.dark) .chart-container,
 [data-theme="dark"] .chart-container {
   background: #1e222d;
-  border-color: #363a45;
-  
+
   .chart-header {
-    background: #2a2e39;
+    background: #1e222d;
     border-color: #363a45;
-    
+
     .chart-label {
       color: #787b86;
     }

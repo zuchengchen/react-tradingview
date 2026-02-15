@@ -3,8 +3,8 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
-  gap: 8px;
-  padding: 8px;
+  gap: 2px;
+  padding: 4px;
   box-sizing: border-box;
   
   &.dark {
@@ -32,14 +32,14 @@
 // Responsive adjustments
 @media (max-height: 600px) {
   .dual-chart-layout {
-    gap: 4px;
-    padding: 4px;
+    gap: 1px;
+    padding: 2px;
   }
 }
 
 @media (max-width: 768px) {
   .dual-chart-layout {
-    gap: 6px;
-    padding: 6px;
+    gap: 2px;
+    padding: 2px;
   }
 }
